@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopmentAndBuildTools", "DevelopmentAndBuildTools\DevelopmentAndBuildTools.csproj", "{6AB743DA-9554-4B8B-BFF9-ED4AD8E6F167}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOf.NETFrameworkAndCSharp", "BasicOf.NETFrameworkAndCSharp\BasicOf.NETFrameworkAndCSharp.csproj", "{452A9614-0B7E-4558-B7AE-400C1910D24A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6AB743DA-9554-4B8B-BFF9-ED4AD8E6F167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AB743DA-9554-4B8B-BFF9-ED4AD8E6F167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AB743DA-9554-4B8B-BFF9-ED4AD8E6F167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
