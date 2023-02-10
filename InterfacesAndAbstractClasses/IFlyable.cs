@@ -8,6 +8,6 @@ namespace InterfacesAndAbstractClasses;
 
 public interface IFlyable
 {
-    void FlyTo();
-    void GetFlyTime();
+    public void FlyTo(Coordinate newPoint);
+    public int GetFlyTime(Coordinate newPoint);
 }
