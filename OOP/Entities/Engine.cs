@@ -12,5 +12,4 @@ public class Engine
     public int Volume;
     public string? Type;
     public string? SerialNumber;
-    public int Capacity { get; set; }
 }

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopmentAndBuildTools", "DevelopmentAndBuildTools\DevelopmentAndBuildTools.csproj", "{6AB743DA-9554-4B8B-BFF9-ED4AD8E6F167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevelopmentAndBuildTools", "DevelopmentAndBuildTools\DevelopmentAndBuildTools.csproj", "{6AB743DA-9554-4B8B-BFF9-ED4AD8E6F167}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOf.NETFrameworkAndCSharp", "BasicOf.NETFrameworkAndCSharp\BasicOf.NETFrameworkAndCSharp.csproj", "{452A9614-0B7E-4558-B7AE-400C1910D24A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicOf.NETFrameworkAndCSharp", "BasicOf.NETFrameworkAndCSharp\BasicOf.NETFrameworkAndCSharp.csproj", "{452A9614-0B7E-4558-B7AE-400C1910D24A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{AF713899-108F-4649-AA04-AE7FF2F557EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "OOP\OOP.csproj", "{AF713899-108F-4649-AA04-AE7FF2F557EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfacesAndAbstractClasses", "InterfacesAndAbstractClasses\InterfacesAndAbstractClasses.csproj", "{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfacesAndAbstractClasses", "InterfacesAndAbstractClasses\InterfacesAndAbstractClasses.csproj", "{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode", "CleanCode\CleanCode.csproj", "{59247160-1534-4BC6-906A-9BA1C0E01A84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59247160-1534-4BC6-906A-9BA1C0E01A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59247160-1534-4BC6-906A-9BA1C0E01A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59247160-1534-4BC6-906A-9BA1C0E01A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59247160-1534-4BC6-906A-9BA1C0E01A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
