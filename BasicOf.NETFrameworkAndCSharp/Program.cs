@@ -1,10 +1,18 @@
-﻿#nullable disable
+﻿decimal decimalNumber;
+int newBase;
+string result = "";
 
-Console.Write("Enter an decimal: ");
-decimal num = decimal.Parse(Console.ReadLine());
-int intNum = Decimal.ToInt32(num);
+Console.Write("Enter a decimal number: ");
+decimalNumber = decimal.Parse(Console.ReadLine());
 
-Console.WriteLine(intNum);
+Console.Write("Enter the base of the new number system (2-20): ");
+newBase = int.Parse(Console.ReadLine());
 
-// With 2 to 20 base number system, I have no idea what to do. Should I create this, should I use a base system called Vigesimal
-// 
+while (decimalNumber > 0)
+{
+    int remainder = (int)(decimalNumber % newBase);
+    result = remainder + result;
+    decimalNumber /= newBase;
+}
+
+Console.WriteLine("The converted number is: " + result);

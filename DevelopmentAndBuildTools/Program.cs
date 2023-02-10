@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Enter the string: ");
+        Console.Write("Enter the string: ");
         string? input = Console.ReadLine();
 
         int maxLength = 0;
