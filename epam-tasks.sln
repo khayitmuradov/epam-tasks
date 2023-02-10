@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevelopmentAndBuildTools", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOf.NETFrameworkAndCSharp", "BasicOf.NETFrameworkAndCSharp\BasicOf.NETFrameworkAndCSharp.csproj", "{452A9614-0B7E-4558-B7AE-400C1910D24A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{AF713899-108F-4649-AA04-AE7FF2F557EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{452A9614-0B7E-4558-B7AE-400C1910D24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
