@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOf.NETFrameworkAndCSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{AF713899-108F-4649-AA04-AE7FF2F557EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfacesAndAbstractClasses", "InterfacesAndAbstractClasses\InterfacesAndAbstractClasses.csproj", "{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF713899-108F-4649-AA04-AE7FF2F557EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
