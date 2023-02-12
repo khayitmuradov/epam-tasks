@@ -1,109 +1,84 @@
-﻿using DotNetCollections.CarTypes;
-using DotNetCollections.Entities;
-using System.Xml.Serialization;
+﻿using DotNetCollections;
+using System.Xml.Linq;
 
 public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        List<object> vehicles = new List<object>()
+        List<Vehicle> vehicles = new List<Vehicle>
         {
-            new PassengerCar
-            (
-                new Engine()
-                {
-                    Power = 650,
-                    Volume = 6550,
-                    Type = "Manual",
-                    SerialNumber = "SAJWA0ES6DPS56028",
-                    Capacity = 250
-                },
-                new Chassis()
-                {
-                    Number = "JH4DA9370PS000721",
-                    PermissibleLoad = 1,
-                    WheelsNumber = 1
-                },
-                new Transmission()
-                {
-                    Type = "fds",
-                    Manufacturer = "fds",
-                    NumberOfGears = 1,
-                }
-            ),
-            new Bus
-            (
-                new Engine()
-                {
-                    Power = 1,
-                    Volume = 1,
-                    Type = "JH4KA4540JC050162",
-                    SerialNumber = "JH4KA3263KC011910"
-                },
-                new Chassis()
-                {
-                    Number = "fdsf",
-                    PermissibleLoad = 1,
-                    WheelsNumber = 1
-                },
-                new Transmission()
-                {
-                    Type = "fds",
-                    Manufacturer = "fds",
-                    NumberOfGears = 1,
-                }
-            ),
-            new Truck
-            (
-                new Engine()
-                {
-                    Power = 1,
-                    Volume = 1,
-                    Type = "dfsf",
-                    SerialNumber = "JH4DB1542MS007683"
-                },
-                new Chassis()
-                {
-                    Number = "JH4KA7670MC006807",
-                    PermissibleLoad = 1,
-                    WheelsNumber = 1
-                },
-                new Transmission()
-                {
-                    Type = "fds",
-                    Manufacturer = "fds",
-                    NumberOfGears = 1,
-                }
-            ),
-            new Scooter
-            (
-                new Engine()
-                {
-                    Power = 1,
-                    Volume = 1,
-                    Type = "dfsf",
-                    SerialNumber = "3B7KF2363YG116285"
-                },
-                new Chassis()
-                {
-                    Number = "1G1ZT51FX6F111393",
-                    PermissibleLoad = 1,
-                    WheelsNumber = 1
-                },
-                new Transmission()
-                {
-                    Type = "fds",
-                    Manufacturer = "fds",
-                    NumberOfGears = 1,
-                }
-            ),
+            new Truck { EngineCapacity = 2.5, EngineType = "Diesel", SerialNumber = "T123", PowerRating = 200 },
+            new PassengerCar { EngineCapacity = 1.8, EngineType = "Petrol", SerialNumber = "P456", PowerRating = 140 },
+            new Bus { EngineCapacity = 3.0, EngineType = "Diesel", SerialNumber = "B789", PowerRating = 300 },
+            new Scooter { EngineCapacity = 0.8, EngineType = "Electric", SerialNumber = "S246", PowerRating = 30 }
         };
 
-        var xmlSerializer = new XmlSerializer(typeof(List<object>));
+        //foreach (var vehicle in vehicles)
+        //{
+        //    Console.WriteLine(vehicle.EngineCapacity + " " + vehicle.EngineType + " " + 
+        //        vehicle.SerialNumber + " " + vehicle.PowerRating);
+        //}
 
-        using (var writer = new StreamWriter("vehicles.xml"))
-        {
-            xmlSerializer.Serialize(writer, vehicles);
-        }
+        XDocument xVehiclesMoreThan1point5EngineCapacity = new XDocument(
+            new XElement("Vehicles",
+                from vehicle in vehicles
+                where vehicle.EngineCapacity > 1.5
+                select
+                    new XElement("Vehicle",
+                        new XAttribute("Type", vehicle.GetType().Name),
+                        new XElement("EngineCapacity", vehicle.EngineCapacity),
+                        new XElement("EngineType", vehicle.EngineType),
+                        new XElement("SerialNumber", vehicle.SerialNumber),
+                        new XElement("PowerRating", vehicle.PowerRating)
+                    )
+            )
+        );
+        xVehiclesMoreThan1point5EngineCapacity.Save("vehicles.xml");
+
+        XDocument xBusesAndTrucksDetails = new XDocument(
+                new XElement("Vehicles",
+                    from vehicle in vehicles
+                    where vehicle is Bus || vehicle is Truck
+                    select new XElement("Vehicle",
+                        new XAttribute("Type", vehicle.GetType().Name),
+                        new XElement("EngineType", vehicle.EngineType),
+                        new XElement("SerialNumber", vehicle.SerialNumber),
+                        new XElement("PowerRating", vehicle.PowerRating)
+                    )
+                )
+            );
+        xBusesAndTrucksDetails.Save("buses_and_trucks.xml");
+
+        XDocument xVehiclesByTransmissionType = new XDocument(
+                new XElement("VehiclesByTransmissionType",
+                    from vehicleGroup in vehicles.GroupBy(v => v.EngineType)
+                    select new XElement("TransmissionType",
+                        new XAttribute("Type", vehicleGroup.Key),
+                        from vehicle in vehicleGroup
+                        select new XElement("Vehicle",
+                            new XAttribute("Type", vehicle.GetType().Name),
+                            new XElement("EngineCapacity", vehicle.EngineCapacity),
+                            new XElement("SerialNumber", vehicle.SerialNumber),
+                            new XElement("PowerRating", vehicle.PowerRating)
+                        )
+                    )
+                )
+            );
+        xVehiclesByTransmissionType.Save("vehicles_by_transmission_type.xml");
+
+
+        Console.WriteLine("200 OK :) btw, xml files are saved in bin folder");
     }
 }
+
+public class Truck : Vehicle
+{ }
+
+public class PassengerCar : Vehicle
+{ }
+
+public class Bus : Vehicle
+{ }
+
+public class Scooter : Vehicle
+{ }
