@@ -2,35 +2,44 @@
 
 public class Drone : IFlyable
 {
-    private Coordinate _currentPosition { get; set; }
-
-    public Drone(Coordinate currentPosition)
-    {
-        _currentPosition = currentPosition;
-    }
+    public Coordinate _currentPosition { get; set; }
+    private double speed = 50;
+    private double hoverTime = 1;
+    private double maxRange = 1000;
 
     public void FlyTo(Coordinate newPoint)
     {
-        int distance = (int)Math.Sqrt(Math.Pow(_currentPosition.X - newPoint.X, 2) +
-                                      Math.Pow(_currentPosition.Y - newPoint.Y, 2) +
-                                      Math.Pow(_currentPosition.Z - newPoint.Z, 2));
+        double distance = Math.Sqrt(Math.Pow(newPoint.X - _currentPosition.X, 2) +
+                                    Math.Pow(newPoint.Y - _currentPosition.Y, 2) +
+                                    Math.Pow(newPoint.Z - _currentPosition.Z, 2));
 
-        if (distance > 1000)
+        if (distance > maxRange)
         {
-            throw new Exception("Drone can't fly more than 1000 km");
+            throw new ArgumentException("Cannot fly more than 1000 km");
         }
+
+        double time = distance / speed;
+        double hoverCount = time / 10;
+        time += hoverCount * hoverTime / 60;
 
         _currentPosition = newPoint;
     }
 
-    public int GetFlyTime(Coordinate newPoint)
+    public TimeSpan GetFlyTime(Coordinate newPoint)
     {
-        int distance = (int)Math.Sqrt(Math.Pow(_currentPosition.X - newPoint.X, 2) +
-                                      Math.Pow(_currentPosition.Y - newPoint.Y, 2) +
-                                      Math.Pow(_currentPosition.Z - newPoint.Z, 2));
+        double distance = Math.Sqrt(Math.Pow(newPoint.X - _currentPosition.X, 2) +
+                                    Math.Pow(newPoint.Y - _currentPosition.Y, 2) +
+                                    Math.Pow(newPoint.Z - _currentPosition.Z, 2));
 
-        int time = (int)Math.Round((double)distance / 20);
+        if (distance > maxRange)
+        {
+            throw new ArgumentException("Cannot fly more than 1000 km");
+        }
 
-        return time + (time / 10);
+        double time = distance / speed;
+        double hoverCount = time / 10;
+        time += hoverCount * hoverTime / 60;
+
+        return TimeSpan.FromHours(time);
     }
 }

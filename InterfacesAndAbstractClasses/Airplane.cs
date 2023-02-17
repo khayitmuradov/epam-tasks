@@ -8,35 +8,42 @@ namespace InterfacesAndAbstractClasses;
 
 public class Airplane : IFlyable
 {
-    public Coordinate CurrentPosition { get; set; }
-
-    public Airplane(Coordinate currentPosition)
-    {
-        CurrentPosition = currentPosition;
-    }
+    public Coordinate _currentPosition { get; set; }
+    private double speed = 200;
+    private double acceleration = 10;
 
     public void FlyTo(Coordinate newPoint)
     {
-        CurrentPosition = newPoint;
-    }
+        double distance = Math.Sqrt(Math.Pow(newPoint.X - _currentPosition.X, 2) +
+                                    Math.Pow(newPoint.Y - _currentPosition.Y, 2) +
+                                    Math.Pow(newPoint.Z - _currentPosition.Z, 2));
 
-    public int GetFlyTime(Coordinate newPoint)
-    {
-        int distance = (int)Math.Sqrt(Math.Pow(CurrentPosition.X - newPoint.X, 2) +
-                                      Math.Pow(CurrentPosition.Y - newPoint.Y, 2) +
-                                      Math.Pow(CurrentPosition.Z - newPoint.Z, 2));
-
-        int speed = 200;
-        int time = 0;
-
-        while (distance > 0)
+        int numSegments = (int)Math.Ceiling(distance / 10);
+        for (int i = 1; i <= numSegments; i++)
         {
-            int currentSpeed = Math.Min(speed, distance);
-            time += (int)Math.Round((double)distance / currentSpeed);
-            speed += 10;
-            distance -= 10;
+            speed += acceleration;
         }
 
-        return time;
+        _currentPosition = newPoint;
+    }
+
+    public TimeSpan GetFlyTime(Coordinate newPoint)
+    {
+        double distance = Math.Sqrt(Math.Pow(newPoint.X - _currentPosition.X, 2) +
+                                    Math.Pow(newPoint.Y - _currentPosition.Y, 2) +
+                                    Math.Pow(newPoint.Z - _currentPosition.Z, 2));
+        double time = 0;
+        double currentSpeed = speed;
+
+        int numSegments = (int)Math.Ceiling(distance / 10);
+        for (int i = 1; i <= numSegments; i++)
+        {
+            double segmentDistance = Math.Min(10, distance - (i - 1) * 10);
+            double segmentTime = segmentDistance / currentSpeed;
+            time += segmentTime;
+            currentSpeed += acceleration;
+        }
+
+        return TimeSpan.FromHours(time);
     }
 }

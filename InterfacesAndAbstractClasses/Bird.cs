@@ -8,27 +8,22 @@ namespace InterfacesAndAbstractClasses;
 
 public class Bird : IFlyable
 {
-    private readonly Random _random = new Random();
-    public Coordinate CurrentPosition { get; set; }
-
-    public Bird(Coordinate currentPosition)
-    {
-        CurrentPosition = currentPosition;
-    }
+    public Coordinate _currentPosition;
+    private double speed = new Random().Next(0, 21);
 
     public void FlyTo(Coordinate newPoint)
     {
-        CurrentPosition = newPoint;
+        _currentPosition = newPoint;
     }
 
-    public int GetFlyTime(Coordinate newPoint)
+    public TimeSpan GetFlyTime(Coordinate newPoint)
     {
-        int distance = (int)Math.Sqrt(Math.Pow(CurrentPosition.X - newPoint.X, 2) +
-                                      Math.Pow(CurrentPosition.Y - newPoint.Y, 2) +
-                                      Math.Pow(CurrentPosition.Z - newPoint.Z, 2));
+        double distance = Math.Sqrt(Math.Pow(newPoint.X - _currentPosition.X, 2) +
+                                    Math.Pow(newPoint.Y - _currentPosition.Y, 2) +
+                                    Math.Pow(newPoint.Z - _currentPosition.Z, 2));
 
-        int speed = _random.Next(0, 21);
+        double time = distance / speed;
 
-        return (int)Math.Round((double)distance / speed);
+        return TimeSpan.FromHours(time);
     }
 }

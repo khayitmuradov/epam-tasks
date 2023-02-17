@@ -3,5 +3,5 @@
 public interface IFlyable
 {
     public void FlyTo(Coordinate newPoint);
-    public int GetFlyTime(Coordinate newPoint);
+    public TimeSpan GetFlyTime(Coordinate newPoint);
 }
