@@ -54,17 +54,17 @@ public class Program
         xVehiclesMoreThan1point5EngineCapacity.Save("vehicles.xml");
 
         XDocument xBusesAndTrucksDetails = new XDocument(
-                new XElement("Vehicles",
-                    from vehicle in vehicles
-                    where vehicle is Bus || vehicle is Truck
-                    select new XElement("Vehicle",
-                        new XAttribute("Type", vehicle.GetType().Name),
-                        new XElement("EngineType", vehicle.EngineType),
-                        new XElement("SerialNumber", vehicle.SerialNumber),
-                        new XElement("PowerRating", vehicle.PowerRating)
-                    )
+            new XElement("Vehicles",
+                from vehicle in vehicles
+                where vehicle is Bus || vehicle is Truck
+                select new XElement("Vehicle",
+                    new XAttribute("Type", vehicle.GetType().Name),
+                    new XElement("EngineType", vehicle.EngineType),
+                    new XElement("SerialNumber", vehicle.SerialNumber),
+                    new XElement("PowerRating", vehicle.PowerRating)
                 )
-            );
+            )
+        );
         xBusesAndTrucksDetails.Save("buses_and_trucks.xml");
 
         XDocument xVehiclesByTransmissionType = new XDocument(
