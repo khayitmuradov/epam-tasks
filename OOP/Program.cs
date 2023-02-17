@@ -1,6 +1,4 @@
-﻿
-
-using OOP.CarTypes;
+﻿using OOP.CarTypes;
 
 namespace OOP;
 
