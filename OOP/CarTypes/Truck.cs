@@ -8,6 +8,17 @@ using System.Threading.Tasks;
 namespace OOP.CarTypes; 
 public class Truck 
 {
+    public Truck()
+    {
+    }
+
+    public Truck(Engine engine, Chassis chassis, Transmission transmission)
+    {
+        Engine = engine;
+        Chassis = chassis;
+        Transmission = transmission;
+    }
+
     public Engine Engine = new Engine()
     {
         Power = 450,
@@ -28,36 +39,27 @@ public class Truck
         Manufacturer = "Ford F-150"
     };
 
-    public Truck()
-    {
-    }
-
-    public Truck(Engine engine, Chassis chassis, Transmission transmission)
-    {
-        Engine = engine;
-        Chassis = chassis;
-        Transmission = transmission;
-    }
-
     public void Info()
     {
-        Console.WriteLine("Passenger Car: \nEngine");
-        Console.WriteLine("Power: " + Engine.Power);
-        Console.WriteLine("Volume: " + Engine.Volume);
-        Console.WriteLine("Type: " + Engine.Type);
-        Console.WriteLine("Serial Number: " + Engine.SerialNumber);
+        Console.WriteLine("Truck Informations: \nEngine");
+        Console.WriteLine($"Power: {Engine.Power}");
+        Console.WriteLine($"Volume: {Engine.Volume}");
+        Console.WriteLine($"Type: {Engine.Type}");
+        Console.WriteLine($"Serial Number: {Engine.SerialNumber}");
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Chassis");
-        Console.WriteLine("Wheels Number:" + Chassis.WheelsNumber);
-        Console.WriteLine("Number: " + Chassis.Number);
-        Console.WriteLine("Load: " + Chassis.PermissibleLoad);
+        Console.WriteLine($"Wheels Number: {Chassis.WheelsNumber}");
+        Console.WriteLine($"Number: {Chassis.Number}");
+        Console.WriteLine($"Load: {Chassis.PermissibleLoad}");
 
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Transmission");
-        Console.WriteLine("Type: " + Transmission.Type);
-        Console.WriteLine("Number Of Gears: " + Transmission.NumberOfGears);
-        Console.WriteLine("Manufacturer: " + Transmission.Manufacturer);
+        Console.WriteLine($"Type: {Transmission.Type}");
+        Console.WriteLine($"Number Of Gears: {Transmission.NumberOfGears}");
+        Console.WriteLine($"Manufacturer: {Transmission.Manufacturer}");
         Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine();
+        Console.WriteLine();
     }
 }

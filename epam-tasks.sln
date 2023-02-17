@@ -11,9 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "OOP\OOP.csproj", "{A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfacesAndAbstractClasses", "InterfacesAndAbstractClasses\InterfacesAndAbstractClasses.csproj", "{6ED5874F-F3DA-4EB6-A827-E29D54C403F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCode", "CleanCode\CleanCode.csproj", "{59247160-1534-4BC6-906A-9BA1C0E01A84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode", "CleanCode\CleanCode.csproj", "{59247160-1534-4BC6-906A-9BA1C0E01A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCollections", "DotNetCollections\DotNetCollections.csproj", "{E08E1C7E-8562-4E3C-9737-E7FB5BB48EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCollections", "DotNetCollections\DotNetCollections.csproj", "{E08E1C7E-8562-4E3C-9737-E7FB5BB48EE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22CA5329-9A44-485D-98B4-99BBAD831A6A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

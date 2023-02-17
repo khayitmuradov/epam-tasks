@@ -25,6 +25,6 @@ public class Program
 
         maxLength = Math.Max(maxLength, currentLength);
 
-        Console.WriteLine("The maximum number of unequal consecutive characters is: " + maxLength);
+        Console.WriteLine($"The maximum number of unequal consecutive characters is: {maxLength}");
     }
 }

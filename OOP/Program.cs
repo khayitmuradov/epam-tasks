@@ -14,24 +14,13 @@ public class Program
     public static void OutputInfo()
     {
         PassengerCar passengerCar = new PassengerCar();
-        passengerCar.Info();
-
-        Console.WriteLine();
-        Console.WriteLine();
-
         Truck truck = new Truck();
-        truck.Info();
-
-        Console.WriteLine();
-        Console.WriteLine();
-
         Bus bus = new Bus();
-        bus.Info();
-
-        Console.WriteLine();
-        Console.WriteLine();
-
         Scooter scooter = new Scooter();
+
+        passengerCar.Info();
+        truck.Info();
+        bus.Info();
         scooter.Info();
     }
 }

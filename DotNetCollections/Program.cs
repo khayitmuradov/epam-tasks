@@ -7,17 +7,35 @@ public class Program
     {
         List<Vehicle> vehicles = new List<Vehicle>
         {
-            new Truck { EngineCapacity = 2.5, EngineType = "Diesel", SerialNumber = "T123", PowerRating = 200 },
-            new PassengerCar { EngineCapacity = 1.8, EngineType = "Petrol", SerialNumber = "P456", PowerRating = 140 },
-            new Bus { EngineCapacity = 3.0, EngineType = "Diesel", SerialNumber = "B789", PowerRating = 300 },
-            new Scooter { EngineCapacity = 0.8, EngineType = "Electric", SerialNumber = "S246", PowerRating = 30 }
+            new Truck 
+            { 
+                EngineCapacity = 2.5, 
+                EngineType = "Diesel", 
+                SerialNumber = "T123", 
+                PowerRating = 200 
+            },
+            new PassengerCar 
+            { 
+                EngineCapacity = 1.8, 
+                EngineType = "Petrol", 
+                SerialNumber = "P456", 
+                PowerRating = 140 
+            },
+            new Bus 
+            { 
+                EngineCapacity = 3.0, 
+                EngineType = "Diesel", 
+                SerialNumber = "B789", 
+                PowerRating = 300 
+            },
+            new Scooter 
+            { 
+                EngineCapacity = 0.8, 
+                EngineType = "Electric", 
+                SerialNumber = "S246", 
+                PowerRating = 30 
+            }
         };
-
-        //foreach (var vehicle in vehicles)
-        //{
-        //    Console.WriteLine(vehicle.EngineCapacity + " " + vehicle.EngineType + " " + 
-        //        vehicle.SerialNumber + " " + vehicle.PowerRating);
-        //}
 
         XDocument xVehiclesMoreThan1point5EngineCapacity = new XDocument(
             new XElement("Vehicles",
@@ -67,7 +85,7 @@ public class Program
         xVehiclesByTransmissionType.Save("vehicles_by_transmission_type.xml");
 
 
-        Console.WriteLine("200 OK :) btw, xml files are saved in bin folder");
+        Console.WriteLine("All xml files are created successfully!");
     }
 }
 

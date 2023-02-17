@@ -1,12 +1,11 @@
-﻿decimal decimalNumber;
-int newBase;
+﻿#nullable disable
 string result = "";
 
 Console.Write("Enter a decimal number: ");
-decimalNumber = decimal.Parse(Console.ReadLine());
+decimal decimalNumber = decimal.Parse(Console.ReadLine());
 
 Console.Write("Enter the base of the new number system (2-20): ");
-newBase = int.Parse(Console.ReadLine());
+int newBase = int.Parse(Console.ReadLine());
 
 while (decimalNumber > 0)
 {
@@ -15,4 +14,4 @@ while (decimalNumber > 0)
     decimalNumber /= newBase;
 }
 
-Console.WriteLine("The converted number is: " + result);
+Console.WriteLine($"The converted number is: {result}");
