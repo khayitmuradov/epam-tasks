@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOP.Entities;
+﻿namespace OOP.Entities;
 
 public class Engine
 {
-    public int Power;
-    public int Volume;
-    public string? Type;
-    public string? SerialNumber;
+    public int Power { get; set; }
+    public int Volume { get; set; }
+    public string? Type { get; set; }
+    public string? SerialNumber { get; set; }
 }

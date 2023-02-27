@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOP.Entities;
+﻿namespace OOP.Entities;
 
 public class Transmission
 {
-    public string? Type;
-    public int NumberOfGears;
-    public string? Manufacturer;
+    public string? Type { get; set; }
+    public int NumberOfGears { get; set; }
+    public string? Manufacturer { get; set; }
 }

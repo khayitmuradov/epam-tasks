@@ -1,25 +1,9 @@
 ﻿using OOP.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP.CarTypes;
 
 public class Scooter
 {
-    public Scooter()
-    {
-    }
-
-    public Scooter(Engine engine, Chassis chassis, Transmission transmission)
-    {
-        Engine = engine;
-        Chassis = chassis;
-        Transmission = transmission;
-    }
-
     public Engine Engine = new Engine()
     {
         Power = 240,

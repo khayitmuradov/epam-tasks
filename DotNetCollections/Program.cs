@@ -1,102 +1,87 @@
-﻿using DotNetCollections;
-using System.Xml.Linq;
+﻿using DotNetCollections.CarTypes;
+using System.Xml;
 
-public class Program // 255 169
+public class Program
 {
     public static void Main(string[] args)
     {
-        List<Vehicle> vehicles = new List<Vehicle>
+        var listOfVehicles = new List<object>
         {
-            new Truck 
-            { 
-                EngineCapacity = 2.5, 
-                EngineType = "Diesel", 
-                SerialNumber = "T123", 
-                PowerRating = 200 
+            new Truck()
+            {
+                EngineCapacity = 2.5, EngineType = "Diesel", SerialNumber = "T123", PowerRating = 200
             },
-            new PassengerCar 
-            { 
-                EngineCapacity = 1.8, 
-                EngineType = "Petrol", 
-                SerialNumber = "P456", 
-                PowerRating = 140 
+            new PassengerCar
+            {
+                EngineCapacity = 1.8, EngineType = "Petrol", SerialNumber = "P456", PowerRating = 140
             },
-            new Bus 
-            { 
-                EngineCapacity = 3.0, 
-                EngineType = "Diesel", 
-                SerialNumber = "B789", 
-                PowerRating = 300 
+            new Bus
+            {
+                EngineCapacity = 3.0, EngineType = "Diesel", SerialNumber = "B789", PowerRating = 300
             },
-            new Scooter 
-            { 
-                EngineCapacity = 0.8, 
-                EngineType = "Electric", 
-                SerialNumber = "S246", 
-                PowerRating = 30 
+            new Scooter
+            {
+                EngineCapacity = 0.8, EngineType = "Electric", SerialNumber = "S246", PowerRating = 30
             }
         };
 
-        XDocument xVehiclesMoreThan1point5EngineCapacity = new XDocument(
-            new XElement("Vehicles",
-                from vehicle in vehicles
-                where vehicle.EngineCapacity > 1.5
-                select
-                    new XElement("Vehicle",
-                        new XAttribute("Type", vehicle.GetType().Name),
-                        new XElement("EngineCapacity", vehicle.EngineCapacity),
-                        new XElement("EngineType", vehicle.EngineType),
-                        new XElement("SerialNumber", vehicle.SerialNumber),
-                        new XElement("PowerRating", vehicle.PowerRating)
-                    )
-            )
-        );
-        xVehiclesMoreThan1point5EngineCapacity.Save("vehicles.xml");
+        XmlDocument xmlDoc = new XmlDocument();
+        XmlElement root = xmlDoc.CreateElement("Vehicles");
+        xmlDoc.AppendChild(root);
 
-        XDocument xBusesAndTrucksDetails = new XDocument(
-            new XElement("Vehicles",
-                from vehicle in vehicles
-                where vehicle is Bus || vehicle is Truck
-                select new XElement("Vehicle",
-                    new XAttribute("Type", vehicle.GetType().Name),
-                    new XElement("EngineType", vehicle.EngineType),
-                    new XElement("SerialNumber", vehicle.SerialNumber),
-                    new XElement("PowerRating", vehicle.PowerRating)
-                )
-            )
-        );
-        xBusesAndTrucksDetails.Save("buses_and_trucks.xml");
-
-        XDocument xVehiclesByTransmissionType = new XDocument(
-                new XElement("VehiclesByTransmissionType",
-                    from vehicleGroup in vehicles.GroupBy(v => v.EngineType)
-                    select new XElement("TransmissionType",
-                        new XAttribute("Type", vehicleGroup.Key),
-                        from vehicle in vehicleGroup
-                        select new XElement("Vehicle",
-                            new XAttribute("Type", vehicle.GetType().Name),
-                            new XElement("EngineCapacity", vehicle.EngineCapacity),
-                            new XElement("SerialNumber", vehicle.SerialNumber),
-                            new XElement("PowerRating", vehicle.PowerRating)
-                        )
-                    )
-                )
-            );
-        xVehiclesByTransmissionType.Save("vehicles_by_transmission_type.xml");
-
-
-        Console.WriteLine("All xml files are created successfully!");
+        foreach (object vehicle in listOfVehicles)
+        {
+            XmlElement vehicleElement = null;
+            if (vehicle is Truck)
+            {
+                if (((Truck)vehicle).EngineCapacity > 1.5)
+                {
+                    Truck truck = (Truck)vehicle;
+                    vehicleElement = xmlDoc.CreateElement("Truck");
+                    vehicleElement.SetAttribute("EngineCapacity", truck.EngineCapacity.ToString());
+                    vehicleElement.SetAttribute("EngineType", truck.EngineType);
+                    vehicleElement.SetAttribute("SerialNumber", truck.SerialNumber);
+                    vehicleElement.SetAttribute("PowerRating", truck.PowerRating.ToString());
+                }
+            }
+            else if (vehicle is PassengerCar && ((PassengerCar)vehicle).EngineCapacity > 1.5)
+            {
+                if (((PassengerCar)vehicle).EngineCapacity > 1.5)
+                {
+                    PassengerCar passengerCar = (PassengerCar)vehicle;
+                    vehicleElement = xmlDoc.CreateElement("PassengerCar");
+                    vehicleElement.SetAttribute("EngineCapacity", passengerCar.EngineCapacity.ToString());
+                    vehicleElement.SetAttribute("EngineType", passengerCar.EngineType);
+                    vehicleElement.SetAttribute("SerialNumber", passengerCar.SerialNumber);
+                    vehicleElement.SetAttribute("PowerRating", passengerCar.PowerRating.ToString());
+                }
+            }
+            else if (vehicle is Bus && ((Bus)vehicle).EngineCapacity > 1.5)
+            {
+                if (((Bus)vehicle).EngineCapacity > 1.5)
+                {
+                    Bus bus = (Bus)vehicle;
+                    vehicleElement = xmlDoc.CreateElement("Bus");
+                    vehicleElement.SetAttribute("EngineCapacity", bus.EngineCapacity.ToString());
+                    vehicleElement.SetAttribute("EngineType", bus.EngineType);
+                    vehicleElement.SetAttribute("SerialNumber", bus.SerialNumber);
+                    vehicleElement.SetAttribute("PowerRating", bus.PowerRating.ToString());
+                }
+            }
+            else if (vehicle is Scooter && ((Scooter)vehicle).EngineCapacity > 1.5)
+            {
+                if (((Scooter)vehicle).EngineCapacity > 1.5)
+                {
+                    Scooter scooter = (Scooter)vehicle;
+                    vehicleElement = xmlDoc.CreateElement("Scooter");
+                    vehicleElement.SetAttribute("EngineCapacity", scooter.EngineCapacity.ToString());
+                    vehicleElement.SetAttribute("EngineType", scooter.EngineType);
+                    vehicleElement.SetAttribute("SerialNumber", scooter.SerialNumber);
+                    vehicleElement.SetAttribute("PowerRating", scooter.PowerRating.ToString());
+                }
+            }
+            root.AppendChild(vehicleElement);
+            xmlDoc.Save("vehicles.xml");
+        }
     }
 }
-
-public class Truck : Vehicle
-{ }
-
-public class PassengerCar : Vehicle
-{ }
-
-public class Bus : Vehicle
-{ }
-
-public class Scooter : Vehicle
-{ }
