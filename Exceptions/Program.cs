@@ -37,10 +37,26 @@ try
         throw new GetAutoByParameterException($"Unable to find car with ID {carId}");
     }
 
-    // perform update
     carToUpdate = newCar;
 }
 catch (GetAutoByParameterException ex)
 {
     Console.WriteLine($"Error updating car: {ex.Message}");
+}
+
+try
+{
+    var carId = "XYZ123";
+    var carToRemove = vehicles.FirstOrDefault(car => car.SerialNumber == carId);
+
+    if (carToRemove == null)
+    {
+        throw new RemoveAutoException($"Unable to find car with ID {carId}");
+    }
+
+    vehicles.Remove(carToRemove);
+}
+catch (RemoveAutoException ex)
+{
+    Console.WriteLine($"Error removing car: {ex.Message}");
 }
