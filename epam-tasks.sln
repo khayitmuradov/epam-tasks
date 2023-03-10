@@ -20,7 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{0507F947-3589-4546-8409-76757680F880}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{0507F947-3589-4546-8409-76757680F880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPDesignPrinciples", "OOPDesignPrinciples\OOPDesignPrinciples.csproj", "{C3161A38-4335-4B15-B9C4-7FDD7FA430BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{0507F947-3589-4546-8409-76757680F880}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0507F947-3589-4546-8409-76757680F880}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0507F947-3589-4546-8409-76757680F880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3161A38-4335-4B15-B9C4-7FDD7FA430BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3161A38-4335-4B15-B9C4-7FDD7FA430BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3161A38-4335-4B15-B9C4-7FDD7FA430BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3161A38-4335-4B15-B9C4-7FDD7FA430BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
