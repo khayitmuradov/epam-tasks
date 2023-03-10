@@ -10,15 +10,22 @@ public class Program
         {
             engine = new Engine
             {
-                Power = 690, Volume = 6498, Type = "Hybrid", SerialNumber = "JH4DB1542MS007683"
+                Power = 690,
+                Volume = 6498,
+                Type = "Hybrid",
+                SerialNumber = "JH4DB1542MS007683"
             },
             chassis = new Chassis
             {
-                WheelsNumber = 4, Number = "2S3TD52V3Y6103456", PermissibleLoad = 2200
+                WheelsNumber = 4,
+                Number = "2S3TD52V3Y6103456",
+                PermissibleLoad = 2200
             },
             transmission = new Transmission
             {
-                Type = "Automatic", NumberOfGears = 4, Manufacturer = "Lamborghini"
+                Type = "Automatic",
+                NumberOfGears = 4,
+                Manufacturer = "Lamborghini"
             }
         };
 
@@ -45,15 +52,22 @@ public class Program
         {
             engine = new Engine
             {
-                Power = 450, Volume = 14553, Type = "V8", SerialNumber = "JH4KA3250LC002400"
+                Power = 450,
+                Volume = 14553,
+                Type = "V8",
+                SerialNumber = "JH4KA3250LC002400"
             },
             chassis = new Chassis
             {
-                WheelsNumber = 4, Number = "1B7GG23Y1NS526835", PermissibleLoad = 4500
+                WheelsNumber = 4,
+                Number = "1B7GG23Y1NS526835",
+                PermissibleLoad = 4500
             },
             transmission = new Transmission
             {
-                Type = "Manual", NumberOfGears = 4, Manufacturer = "Ford F-150"
+                Type = "Manual",
+                NumberOfGears = 4,
+                Manufacturer = "Ford F-150"
             }
         };
 
@@ -80,15 +94,22 @@ public class Program
         {
             engine = new Engine
             {
-                Power = 450, Volume = 8560, Type = "Manual", SerialNumber = "3VWDX7AJ5BM006256"
+                Power = 450,
+                Volume = 8560,
+                Type = "Manual",
+                SerialNumber = "3VWDX7AJ5BM006256"
             },
             chassis = new Chassis
             {
-                WheelsNumber = 6, Number = "1B3HB48B67D562726", PermissibleLoad = 8950
+                WheelsNumber = 6,
+                Number = "1B3HB48B67D562726",
+                PermissibleLoad = 8950
             },
             transmission = new Transmission
             {
-                Type = "Automatic", NumberOfGears = 8, Manufacturer = "BTS Bus"
+                Type = "Automatic",
+                NumberOfGears = 8,
+                Manufacturer = "BTS Bus"
             }
         };
 
@@ -115,15 +136,22 @@ public class Program
         {
             engine = new Engine
             {
-                Power = 240, Volume = 1400, Type = "Automatic", SerialNumber = "JH4CC2560PC005719"
+                Power = 240,
+                Volume = 1400,
+                Type = "Automatic",
+                SerialNumber = "JH4CC2560PC005719"
             },
             chassis = new Chassis
             {
-                WheelsNumber = 2, Number = "WBAWC73578E067076", PermissibleLoad = 350
+                WheelsNumber = 2,
+                Number = "WBAWC73578E067076",
+                PermissibleLoad = 350
             },
             transmission = new Transmission
             {
-                Type = "Automatic", NumberOfGears = 1, Manufacturer = "Super Simple"
+                Type = "Automatic",
+                NumberOfGears = 1,
+                Manufacturer = "Super Simple"
             }
         };
 

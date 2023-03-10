@@ -1,6 +1,5 @@
 ﻿using DotNetCollections;
 using DotNetCollections.CarTypes;
-using System.Xml;
 using System.Xml.Linq;
 
 public class Program
@@ -9,7 +8,7 @@ public class Program
     {
         List<Vehicle> vehicles = new List<Vehicle>
         {
-            new Truck { EngineCapacity = 2.5, EngineType = "Diesel", SerialNumber = "T123", PowerRating = 200 }, 
+            new Truck { EngineCapacity = 2.5, EngineType = "Diesel", SerialNumber = "T123", PowerRating = 200 },
             new PassengerCar { EngineCapacity = 1.8, EngineType = "Petrol", SerialNumber = "P456", PowerRating = 140 },
             new Bus { EngineCapacity = 3.0, EngineType = "Diesel", SerialNumber = "B789", PowerRating = 300 },
             new Scooter { EngineCapacity = 0.8, EngineType = "Electric", SerialNumber = "S246", PowerRating = 30 }
@@ -58,7 +57,7 @@ public class Program
                     )
                 )
             );
-        
+
         xVehiclesMoreThan1point5EngineCapacity.Save("vehicles.xml");
         xBusesAndTrucksDetails.Save("buses_and_trucks.xml");
         xVehiclesByTransmissionType.Save("vehicles_by_transmission_type.xml");

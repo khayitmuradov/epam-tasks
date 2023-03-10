@@ -1,6 +1,6 @@
 ﻿namespace DotNetCollections.CarTypes;
 
-public class PassengerCar : Vehicle 
+public class PassengerCar : Vehicle
 {
 
 }

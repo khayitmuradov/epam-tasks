@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Exceptions.Exceptions;
 
 namespace Exceptions;
 
@@ -12,12 +8,19 @@ public class Vehicle
     public string? EngineType { get; set; }
     public string? SerialNumber { get; set; }
     public int PowerRating { get; set; }
+    public string? CarModel { get; set; }
 
-    public Vehicle(double engineCapacity, string? engineType, string? serialNumber, int powerRating)
+    public Vehicle(double engineCapacity, string? engineType, string? serialNumber, int powerRating, string? carModel)
     {
+        if (string.IsNullOrEmpty(carModel))
+        {
+            throw new InitializationException("Car model cannot be null or empty");
+        }
+
         EngineCapacity = engineCapacity;
         EngineType = engineType;
         SerialNumber = serialNumber;
         PowerRating = powerRating;
+        CarModel = carModel;
     }
 }

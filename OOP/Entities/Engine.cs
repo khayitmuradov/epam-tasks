@@ -12,8 +12,8 @@ public class Engine
         get { return _power; }
         set
         {
-            if (value < 0) 
-            { 
+            if (value < 0)
+            {
                 throw new Exception("Power should be a positive integer.");
             }
         }
