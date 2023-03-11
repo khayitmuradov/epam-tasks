@@ -1,5 +1,5 @@
 ﻿namespace OOP.Entities;
-
+#pragma warning disable
 public class Chassis
 {
     private int _wheels;
