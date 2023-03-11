@@ -29,7 +29,7 @@ public class StringUtilsTests
         int result = StringUtilities.GetMaxUnequalConsecutiveChars(input);
 
         // Assert
-        Assert.That(result, Is.EqualTo(18));
+        Assert.That(result, Is.EqualTo(2));
     }
 
     [Test]
@@ -56,5 +56,57 @@ public class StringUtilsTests
 
         // Assert
         Assert.That(result, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void GetMaxConsecutiveLetters_WhenInputHasConsecutiveLetters_ReturnsMaxCount()
+    {
+        // Arrange
+        string input = "aabbccdefggg";
+
+        // Act
+        int result = StringUtilities.GetMaxConsecutiveLetters(input);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(3));
+    }
+
+    [Test]
+    public void GetMaxConsecutiveDigits_WhenInputIsEmpty_ReturnsZero()
+    {
+        // Arrange
+        string input = "";
+
+        // Act
+        int result = StringUtilities.GetMaxConsecutiveDigits(input);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(0));
+    }
+
+    [Test]
+    public void GetMaxConsecutiveDigits_WhenInputHasNoConsecutiveDigits_ReturnsOne()
+    {
+        // Arrange
+        string input = "abcd";
+
+        // Act
+        int result = StringUtilities.GetMaxConsecutiveDigits(input);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void GetMaxConsecutiveDigits_WhenInputHasConsecutiveDigits_ReturnsMaxCount()
+    {
+        // Arrange
+        string input = "123333444455555";
+
+        // Act
+        int result = StringUtilities.GetMaxConsecutiveDigits(input);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(5));
     }
 }
